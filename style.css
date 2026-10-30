@@ -1,0 +1,190 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background: #f4f5f9;
+}
+
+header {
+  background: #2b3a67;
+  color: #fff;
+  text-align: center;
+  padding: 24px 16px;
+}
+
+header h1 {
+  margin: 0 0 4px;
+}
+
+header p {
+  margin: 0;
+  opacity: 0.85;
+}
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+section {
+  margin-bottom: 32px;
+}
+
+h2 {
+  margin: 0 0 12px;
+  font-size: 1.25rem;
+}
+
+footer {
+  text-align: center;
+  padding: 16px;
+  color: #555;
+  border-top: 1px solid #d5d8e0;
+}
+
+/* ---------- Status messages ---------- */
+#status {
+  min-height: 2.6em;
+  margin: 12px 0;
+  padding: 8px 12px;
+  border-left: 5px solid transparent;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+#status:empty {
+  padding: 0;
+  border: none;
+}
+
+#status.loading {
+  color: #444;
+  background: #eceef5;
+  border-left-color: #8a92b2;
+}
+
+#status.success {
+  color: #14532d;
+  background: #dcfce7;
+  border-left-color: #16a34a;
+}
+
+#status.error {
+  color: #7f1d1d;
+  background: #fee2e2;
+  border-left-color: #dc2626;
+}
+
+/* ---------- Form ---------- */
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+input,
+textarea {
+  padding: 10px;
+  font: inherit;
+  border: 1px solid #b8bdcc;
+  border-radius: 6px;
+  background: #fff;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid #2b3a67;
+  outline-offset: 1px;
+}
+
+/* ---------- Buttons ---------- */
+button {
+  padding: 10px 20px;
+  font: inherit;
+  color: #fff;
+  background: #2b3a67;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+  background: #44589f;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.delete-btn {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  background: #b3261e;
+}
+
+.delete-btn:hover:not(:disabled) {
+  background: #8c1d18;
+}
+
+/* ---------- Notes ---------- */
+#notes-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.note {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin: 0 0 12px;
+  padding: 14px 16px;
+  background: #fff;
+  border: 1px solid #d5d8e0;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.note h3 {
+  margin: 0 0 4px;
+  font-size: 1.05rem;
+  overflow-wrap: anywhere;
+}
+
+.note p {
+  margin: 0;
+  color: #444;
+  overflow-wrap: anywhere;
+}
+
+.note.empty {
+  justify-content: center;
+  color: #666;
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  .note {
+    flex-direction: column;
+  }
+
+  .delete-btn {
+    align-self: flex-end;
+  }
+}
